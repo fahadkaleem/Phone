@@ -1,6 +1,7 @@
 package com.mohammedfahadkaleem.phone.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -21,8 +22,8 @@ import java.util.List;
  */
 
 public class FavouritesFragment extends Fragment {
- private View parent_view;
- private RecyclerView recyclerView;
+ private View mParentView;
+ private RecyclerView mRecyclerView;
  private FavouritesGridAdapter mAdapter;
 
  public FavouritesFragment() {
@@ -30,31 +31,30 @@ public class FavouritesFragment extends Fragment {
  }
 
  public static FavouritesFragment newInstance() {
-  FavouritesFragment fragment = new FavouritesFragment();
-  return fragment;
+  return new FavouritesFragment();
  }
 
 
  @Override
- public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+ public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
   View view =  inflater.inflate(R.layout.fragment_favourites, container, false);
-  parent_view = getActivity().findViewById(android.R.id.content);
-  recyclerView = view.findViewById(R.id.favourites_recyclerView);
-  recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-  recyclerView.addItemDecoration(new SpacingItemDecoration(2, Utils.dpToPx(getContext(), 1), true));
-  recyclerView.setHasFixedSize(true);
+  mParentView = getActivity().findViewById(android.R.id.content);
+  mRecyclerView = view.findViewById(R.id.favourites_recyclerView);
+  mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+  mRecyclerView.addItemDecoration(new SpacingItemDecoration(2, Utils.dpToPx(getContext(), 1), true));
+  mRecyclerView.setHasFixedSize(true);
 
-  List<Contact> items = DummyDataGenerator.getPeopleData(getContext());
+  List<Contact> contactList = DummyDataGenerator.getPeopleData(getContext());
 
   //set data and list adapter
-  mAdapter = new FavouritesGridAdapter(getActivity(), items);
-  recyclerView.setAdapter(mAdapter);
+  mAdapter = new FavouritesGridAdapter(getActivity(), contactList);
+  mRecyclerView.setAdapter(mAdapter);
 
   // on item list clicked
   mAdapter.setOnItemClickListener(new FavouritesGridAdapter.OnItemClickListener() {
    @Override
    public void onItemClick(View view, Contact obj, int position) {
-    Snackbar.make(parent_view, obj.name + " clicked", Snackbar.LENGTH_SHORT).show();
+    Snackbar.make(mParentView, obj.name + " clicked", Snackbar.LENGTH_SHORT).show();
    }
   });
 
