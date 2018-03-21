@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="dummy_favourite_contacts">
+    <item>Dwayne Johnson</item>
+    <item>Jason Statham</item>
+    <item>Morgan Freeman</item>
+    <item>Robert Downey Jr.</item>
+    <item>Alexandra Daddario</item>
+    <item>Melissa Benoist</item>
+    <item>Emma Stone</item>
+    <item>Natalie Portman</item>
+    <item>Ed Sheeran</item>
+    <item>Candice Swanepoel</item>
+    <item>Barack Obama</item>
+    <item>Mark Zuckerberg</item>
+    <item>Jeff Bezos</item>
+    <item>Bill Gates</item>
+    <item>Elon Musk</item>
+    <item>Mark Cuban</item>
+    <item>Lionel Messi</item>
+    <item>Stephen Curry</item>
+    <item>Steve Cook</item>
+    <item>Chrissy Costanza</item>
+  </string-array>
+
+  <integer-array name="dummy_favourite_contacts_images">
+    <item>@drawable/photo_dwayne_johnson</item>
+    <item>@drawable/photo_jason_statham</item>
+    <item>@drawable/photo_morgan_freeman</item>
+    <item>@drawable/photo_robert_downey</item>
+    <item>@drawable/photo_alexandra_daddario</item>
+    <item>@drawable/photo_melissa_benoist</item>
+    <item>@drawable/photo_emma_stone</item>
+    <item>@drawable/photo_natalie_portman</item>
+    <item>@drawable/photo_ed_sheeran</item>
+    <item>@drawable/photo_candice_swanepoel</item>
+    <item>@drawable/photo_barack_obama</item>
+    <item>@drawable/photo_mark_zuckerberg</item>
+    <item>@drawable/photo_jeff_benzos</item>
+    <item>@drawable/photo_bill_gates</item>
+    <item>@drawable/photo_elon_musk</item>
+    <item>@drawable/photo_mark_cuban</item>
+    <item>@drawable/photo_leo_messi</item>
+    <item>@drawable/photo_stephen_curry</item>
+    <item>@drawable/photo_steve_cook</item>
+    <item>@drawable/photo_crissy_costanza</item>
+  </integer-array>
+</resources>
