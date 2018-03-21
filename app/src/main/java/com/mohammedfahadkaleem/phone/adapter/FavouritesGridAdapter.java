@@ -18,11 +18,11 @@ import java.util.List;
  */
 
 public class FavouritesGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-  private List<Contact> items = new ArrayList<>();
+  private List<Contact> mContactList = new ArrayList<>();
 
-  private OnLoadMoreListener onLoadMoreListener;
+  private OnLoadMoreListener mOnLoadMoreListener;
 
-  private Context ctx;
+  private Context context;
   private OnItemClickListener mOnItemClickListener;
 
   public interface OnItemClickListener {
@@ -34,22 +34,22 @@ public class FavouritesGridAdapter extends RecyclerView.Adapter<RecyclerView.Vie
   }
 
   public FavouritesGridAdapter(Context context, List<Contact> items) {
-    this.items = items;
-    ctx = context;
+    this.mContactList = items;
+    this.context = context;
   }
 
-  public class OriginalViewHolder extends RecyclerView.ViewHolder {
+  public class FavouritesGridViewHolder extends RecyclerView.ViewHolder {
     public ImageView image;
     public TextView name;
     public TextView brief;
     public View lyt_parent;
 
-    public OriginalViewHolder(View v) {
-      super(v);
-      image = (ImageView) v.findViewById(R.id.image);
-      name = (TextView) v.findViewById(R.id.name);
-      brief = (TextView) v.findViewById(R.id.brief);
-      lyt_parent = (View) v.findViewById(R.id.lyt_parent);
+    public FavouritesGridViewHolder(View view) {
+      super(view);
+      image = view.findViewById(R.id.image);
+      name = view.findViewById(R.id.name);
+      brief = view.findViewById(R.id.brief);
+      lyt_parent = view.findViewById(R.id.lyt_parent);
     }
   }
 
@@ -58,24 +58,24 @@ public class FavouritesGridAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     RecyclerView.ViewHolder vh;
     View v = LayoutInflater
         .from(parent.getContext()).inflate(R.layout.item_favourite_grid, parent, false);
-    vh = new OriginalViewHolder(v);
+    vh = new FavouritesGridViewHolder(v);
     return vh;
   }
 
   // Replace the contents of a view (invoked by the layout manager)
   @Override
   public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-    Contact obj = items.get(position);
-    if (holder instanceof OriginalViewHolder) {
-      OriginalViewHolder view = (OriginalViewHolder) holder;
+    Contact obj = mContactList.get(position);
+    if (holder instanceof FavouritesGridViewHolder) {
+      FavouritesGridViewHolder view = (FavouritesGridViewHolder) holder;
       view.name.setText(obj.name);
       view.brief.setText("Mobile");
-      Utils.displayImageOriginal(ctx, view.image, obj.image);
+      Utils.displayImageOriginal(context, view.image, obj.image);
       view.lyt_parent.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
           if (mOnItemClickListener != null) {
-            mOnItemClickListener.onItemClick(view, items.get(position), position);
+            mOnItemClickListener.onItemClick(view, mContactList.get(position), position);
           }
         }
       });
@@ -84,11 +84,11 @@ public class FavouritesGridAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
   @Override
   public int getItemCount() {
-    return items.size();
+    return mContactList.size();
   }
 
-  public void setOnLoadMoreListener(OnLoadMoreListener onLoadMoreListener) {
-    this.onLoadMoreListener = onLoadMoreListener;
+  public void setmOnLoadMoreListener(OnLoadMoreListener mOnLoadMoreListener) {
+    this.mOnLoadMoreListener = mOnLoadMoreListener;
   }
 
   public interface OnLoadMoreListener {

@@ -16,19 +16,19 @@ import java.util.List;
 public class DummyDataGenerator {
   private final static String TAG = "DummyDataGenerator";
   public static List<Contact> getPeopleData(Context ctx) {
-    List<Contact> items = new ArrayList<>();
+    List<Contact> contactList = new ArrayList<>();
     TypedArray drw_arr = ctx.getResources().obtainTypedArray(R.array.dummy_favourite_contacts_images);
     String name_arr[] = ctx.getResources().getStringArray(R.array.dummy_favourite_contacts);
 
     for (int i = 0; i < drw_arr.length(); i++) {
-      Contact obj = new Contact();
-      obj.image = drw_arr.getResourceId(i, -1);
-      obj.name = name_arr[i];
-      obj.email = Utils.getEmailFromName(obj.name);
-      obj.imageDrw = ctx.getResources().getDrawable(obj.image);
-      items.add(obj);
+      Contact contact = new Contact();
+      contact.image = drw_arr.getResourceId(i, -1);
+      contact.name = name_arr[i];
+      contact.email = Utils.getEmailFromName(contact.name);
+      contact.imageDrw = ctx.getResources().getDrawable(contact.image);
+      contactList.add(contact);
     }
-    Collections.shuffle(items);
-    return items;
+    Collections.shuffle(contactList);
+    return contactList;
   }
 }

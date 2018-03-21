@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/menu_call_history"
+    android:title="Call history"
+    app:showAsAction="never"/>
+  <item
+    android:id="@+id/menu_clear_frequents"
+    android:title="Clear frequents"/>
+  <item
+    android:id="@+id/menu_settings"
+    android:title="Settings"/>
+  <item
+    android:id="@+id/menu_help_feedback"
+    android:title="Help &amp; feedback"/>
+</menu>
