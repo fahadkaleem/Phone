@@ -24,6 +24,7 @@ ext{
     testRunnerVersion = '1.0.1'
     espressoVersion = '3.0.1'
     glideVersion = '3.7.0'
+    butterKnifeVersion = '8.8.1'
 }
 
 dependencies {
@@ -33,12 +34,25 @@ dependencies {
     androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
 
-    //Third Party Libraries
-    //Libraries
+    // Third Party Libraries
+    // Support Libraries
     compile "com.android.support:support-core-utils:$supportLibraryVersion"
     compile "com.android.support:design:$supportLibraryVersion"
     compile "com.android.support:cardview-v7:$supportLibraryVersion"
     compile "com.android.support:recyclerview-v7:$supportLibraryVersion"
+
+    // Material Ripple
+    // https://github.com/balysv/material-ripple
     compile "com.balysv:material-ripple:$materialRippleVersion"
+
+    // Glide
+    // https://github.com/bumptech/glide
     compile "com.github.bumptech.glide:glide:$glideVersion"
+
+    // Butter Knife
+    // https://github.com/JakeWharton/butterknife
+    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
+
 }

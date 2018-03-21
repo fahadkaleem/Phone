@@ -23,7 +23,7 @@
       android:layout_height="?attr/actionBarSize"
       app:tabGravity="fill"
       app:tabIndicatorColor="@color/colorAccent"
-      app:tabIndicatorHeight="3dp"
+      app:tabIndicatorHeight="@dimen/tab_indicator_height"
       app:tabMode="fixed"
       />
 
