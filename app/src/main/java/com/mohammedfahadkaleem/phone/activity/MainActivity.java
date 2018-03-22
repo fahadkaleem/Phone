@@ -7,6 +7,7 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.view.Gravity;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -96,7 +97,8 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void showPopup(View view) {
-    PopupMenu popupMenu = new PopupMenu(this, view);
+    //PopupMenu popupMenu = new PopupMenu(this, view);
+    PopupMenu popupMenu = new PopupMenu(this,view, Gravity.NO_GRAVITY, R.attr.actionOverflowMenuStyle, 0);
     MenuInflater inflater = popupMenu.getMenuInflater();
     inflater.inflate(R.menu.menu, popupMenu.getMenu());
     popupMenu.show();
