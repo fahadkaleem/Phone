@@ -41,14 +41,12 @@ public class FavouritesGridAdapter extends RecyclerView.Adapter<RecyclerView.Vie
   public class FavouritesGridViewHolder extends RecyclerView.ViewHolder {
     public ImageView image;
     public TextView name;
-    public TextView brief;
     public View lyt_parent;
 
     public FavouritesGridViewHolder(View view) {
       super(view);
       image = view.findViewById(R.id.image);
       name = view.findViewById(R.id.name);
-      brief = view.findViewById(R.id.brief);
       lyt_parent = view.findViewById(R.id.lyt_parent);
     }
   }
@@ -69,7 +67,6 @@ public class FavouritesGridAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     if (holder instanceof FavouritesGridViewHolder) {
       FavouritesGridViewHolder view = (FavouritesGridViewHolder) holder;
       view.name.setText(obj.name);
-      view.brief.setText("Mobile");
       Utils.displayImageOriginal(context, view.image, obj.image);
       view.lyt_parent.setOnClickListener(new View.OnClickListener() {
         @Override

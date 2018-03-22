@@ -1,11 +1,12 @@
 package com.mohammedfahadkaleem.phone.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.mohammedfahadkaleem.phone.R;
 
 /**
@@ -13,17 +14,17 @@ import com.mohammedfahadkaleem.phone.R;
  */
 
 public class SearchContactsActivity extends AppCompatActivity{
+  @BindView(R.id.iv_back_arrow)
   ImageView backArrow;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_search_contacts);
-    backArrow = findViewById(R.id.iv_back_arrow);
+    ButterKnife.bind(this);
     backArrow.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View view) {
-        Intent intent = new Intent(SearchContactsActivity.this, MainActivity.class);
-        startActivity(intent);
+        SearchContactsActivity.super.onBackPressed();
       }
     });
 
